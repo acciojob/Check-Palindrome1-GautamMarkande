@@ -1,23 +1,14 @@
 // complete the given function
-
-function palindrome(str){
-	let str1 = str.toLowerCase();
-	let i = 0;
-	let j = str.length;
-	while(i<j){
-		if(!(str1.charAt(i)>='a' && str1.charAt(i)<='z')){
-			i++;
-		}
-		else if((!(str1.charAt(j)>='a' && str1.charAt(j)<='z')){
-			j--;
-		}else{
-			if(str1.charAt(i)!=str1.charAt(j)){
-				return false;
-			}
-			i++;
-			j--;
-		}
-	}
-return true;
+function Palindrome(str) {
+  // Remove non-alphanumeric characters and convert to lowercase
+  str = str.replace(/[^0-9a-z]/gi, '').toLowerCase();
+  
+  // Check if the string is equal to its reverse
+  return str === str.split('').reverse().join('');
 }
+
+// console.log(isPalindrome("race a car")); // false
+// console.log(isPalindrome("racecar")); // true
+// console.log(isPalindrome("A man, a plan, a canal: Panama")); // true
+
 module.exports = palindrome
